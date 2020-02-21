@@ -1,2 +1,6 @@
-# SpaceGame
-Personal repository for the Global Game Jam 2020 group submission
+# ggj20
+
+SPACE GAME 
+
+Global Game Jam 2020
+Theme: Repair
