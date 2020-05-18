@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Written by Mason Eastman
 public class EndgameScreens : MonoBehaviour
 {
     public Camera myCamera;
@@ -19,6 +20,7 @@ public class EndgameScreens : MonoBehaviour
         
     }
 
+    //waits on a screen, moves camera to the next, then loads the main menu 
     IEnumerator TimedScreens()
     {
         yield return new WaitForSeconds(4);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Written by Mason Eastman
 public class FailController : MonoBehaviour
 {
 
@@ -30,6 +31,8 @@ public class FailController : MonoBehaviour
     {
         //Determines which button is "selected" based on the directional input
         //accounts for wrapping
+
+        //moving to the right on menu options
         if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Joystick2Button5)) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             selectedIndex++;
@@ -38,6 +41,7 @@ public class FailController : MonoBehaviour
                 selectedIndex = 0;
             }
         }
+        //moving to the left on menu options
         else if ((Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.Joystick2Button4)) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             selectedIndex--;
@@ -48,24 +52,28 @@ public class FailController : MonoBehaviour
         }
 
         //update the sprites correctly based on which one is "selected"
+        //retry button is selected
         if (selectedIndex == 0)
         {
             retryButton.sprite = retryAlt;
             quitButton.sprite = quitMain;
         }
+        //quit button is selected
         else
         {
             retryButton.sprite = retryMain;
             quitButton.sprite = quitAlt;
         }
-        Debug.Log(selectedIndex);
+        //player presses return or "A" button on selected button
         if ((Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Joystick2Button0)) || Input.GetKeyDown(KeyCode.Return))
         {
+            //player on retry button
             if (selectedIndex == 0)
             {
                 //replace with first level scene
                 SceneManager.LoadScene("Level 1");
             }
+            //player on quit button
             else
             {
                 Application.Quit();

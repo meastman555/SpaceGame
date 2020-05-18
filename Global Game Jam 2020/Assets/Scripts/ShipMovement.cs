@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Written by Mason Eastman
 public class ShipMovement : MonoBehaviour
 {
     //15 seems to be good...? Depends on the scale of the game
@@ -28,6 +29,8 @@ public class ShipMovement : MonoBehaviour
             myRigidBody.AddForce(transform.up * moveSpeed);
         }
         //Rotates along the Z-axis (positively or negatively) depending on key pressed
+        //IMPORTANT: because of time constraints couldn't make controller/keyboard controls independent
+        //so that's why there are ! input checks to ensure both players can't move the same object
         else if (Input.GetAxis("ShipTurnLeft") > 0 || Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(0, 0, turnSpeed * Time.deltaTime);

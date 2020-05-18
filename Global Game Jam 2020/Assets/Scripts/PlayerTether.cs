@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Written by Mason Eastman
 public class PlayerTether : MonoBehaviour
 {
     public GameObject ship;
@@ -27,6 +28,8 @@ public class PlayerTether : MonoBehaviour
     void Update()
     {
         //allows astronaut to move omnidirectionally but within the bounds of the length of the tether
+        //IMPORTANT: because of time constraints couldn't make controller/keyboard controls independent
+        //so that's why there are ! input checks to ensure both players can't move the same object
         if((Input.GetAxis("Vertical") > 0 || Input.GetKey(KeyCode.I)) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.UpArrow))
         {
             myRigidBody.AddForce(transform.up * moveSpeed);

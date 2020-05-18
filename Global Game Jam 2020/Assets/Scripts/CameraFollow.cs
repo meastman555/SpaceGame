@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Written by Mason Eastman
 public class CameraFollow : MonoBehaviour
 {
     //allows for the correct gameobject that the camera should follow to be set from the inspector
